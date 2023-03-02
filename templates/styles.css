@@ -1,0 +1,8 @@
+.webcam{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* .videoWindow{
+    outline: 1px solid red;
+} */
