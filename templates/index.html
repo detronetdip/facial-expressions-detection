@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="./script.js" defer></script>
+  </head>
 
   <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8  offset-lg-2 webcam">
-                <h3 class="mt-5">Live Streaming</h3>
-                <img src="{{ url_for('video') }}" class="videoWindow" width="50%">
-                <!-- <img class="videoWindow" src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg" alt="" srcset=""> -->
+    <div class="loader" id="loader">
+      <div class="face-container">
+        <div
+          class="face"
+          style="
+            --left-lower-rotation: 20deg;
+            --left-lower-position: 40%;
+            --left-upper-rotation: 0deg;
+            --left-upper-position: 0%;
+            --right-lower-rotation: -20deg;
+            --right-lower-position: 40%;
+            --right-upper-rotation: 0deg;
+            --right-upper-position: 0%;
+            --face-rotation-x: 0deg;
+            --face-rotation-y: 0deg;
+            --face-rotation-z: 0deg;
+          "
+        >
+          <div class="eye left">
+            <div class="lower">
+              <div class="lid"></div>
             </div>
+            <div class="upper">
+              <div class="lid"></div>
+            </div>
+          </div>
+          <div class="eye right">
+            <div class="lower">
+              <div class="lid"></div>
+            </div>
+            <div class="upper">
+              <div class="lid"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    </body>
-
-
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 webcam">
+          <h3 class="mt-5">Live Streaming</h3>
+          <img src="{{ url_for('video') }}" class="videoWindow" width="50%" />
+          <!-- <img class="videoWindow" src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg" alt="" srcset=""> -->
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
